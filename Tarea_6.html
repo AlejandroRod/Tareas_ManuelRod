@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
+	<title>Fades</title>
+	<style type="text/css" media="screen">
+	.clear{
+		clear: both;
+	}
+	.cuadro{
+		width: 200px;
+		height: 200px;
+		float: left;
+		margin: 10px;
+	}
+	#rojo{
+		background: red;
+		display: none;
+	}
+	#azul{
+		background: blue;
+		display: none;
+	}
+	#verde{
+		background: green;
+		display: none;
+	}
+	#negro{
+		background: black;
+		display: none;
+	}
+	#naranja{
+		background: #FF6600;
+		display: none;
+	}
+	</style>
+	
+	<script type="text/javascript">
+	function aparece(){
+		$("#rojo").show();
+	}
+	function desaparece(){
+		$("#rojo").hide();
+	}
+	function fadeIn(){
+		$("#azul").fadeIn(function(){
+			$("#verde").fadeIn(1000);
+		});
+	}
+	function fadeOut(){
+		$("#azul").fadeOut(function(){
+			$("#verde").fadeOut(1000);
+		});
+	}
+	function toggle(){
+		$("#azul").fadeToggle(function(){
+			$("#verde").fadeToggle(1000);
+		});
+	}
+	function slideToggle(){
+		$("#negro").slideToggle();
+	}
+	$(document).ready(function(){
+		
+		$("#rojo").click(function(){
+			$("#naranja").fadeIn();
+		});
+		
+		$("#azul").mouseenter(function(){
+			$("#naranja").fadeIn();
+		});
+		$("#azul").mouseleave(function(){
+			$("#naranja").fadeOut();
+		});
+		
+		$("#verde").mouseenter(function(){
+			$("#naranja").css("width", "300");
+		});
+		$("#verde").mouseleave(function(){
+			$("#naranja").css("width", "200");
+		});
+		
+		$("#negro").click(function(){
+			$("#naranja").animate({
+				width: "500px",
+				backgroundColor: "#33CC33"
+			},1000);
+		});
+		$("#negro").click(function(){
+			$("#naranja").animate({
+				width: "200px",
+				backgroundColor: "#FF6600"
+			},1000);
+		});
+		
+	});
+	</script>
+</head>
+<body>
+	
+	<input type="button" value="Aparece" onclick="aparece();"></input>
+	<input type="button" value="Desaparece" onclick="desaparece();"></input>
+	<input type="button" value="FadeIn" onclick="fadeIn();"></input>
+	<input type="button" value="FadeOut" onclick="fadeOut();"></input>
+	<input type="button" value="FadeToggle" onclick="toggle();"></input>
+	<input type="button" value="SlideToggle" onclick="slideToggle();"></input>
+	
+	<div class="clear">
+		
+	</div>
+	
+	<div id="rojo" class="cuadro">
+		
+	</div>
+	<div id="azul" class="cuadro">
+		
+	</div>
+	<div id="verde" class="cuadro">
+		
+	</div>
+	<div id="negro" class="cuadro">
+		
+	</div>
+	<div id="naranja" class="cuadro">
+		
+	</div>
+	
+	
+	
+</body>
+
+</html>

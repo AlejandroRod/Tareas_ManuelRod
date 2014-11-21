@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Día Noche</title>
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<style type="text/css" media="screen">
+		#quote{
+			font-family: Lobster;
+			font-size: 100px;
+			text-align: center;
+			color: #ecf0f1;
+			position: fixed;
+			top:30%;
+		}
+	</style>
+
+<div id="quote"></div>
+
+<div id="hora"></div>
+
+<script type="text/javascript">
+
+	today = new Date();
+	hora = today.getHours();
+	// alert(hora);
+	
+	if(today.getHours()<=19){
+		/*alert("Sun is shining, the weather is sweet, yeah");*/
+		document.body.style.backgroundColor = "#f1c40f";
+		document.getElementById("quote").value="Sun is shining, the weather is sweet, yeah!";
+		document.getElementById("quote").innerHTML=document.getElementById("quote").value;
+	}else if(today.getHours()<=5){
+		/*alert("The night is dark and full of terrors");*/
+		document.body.style.backgroundColor = "#2c3e50";
+		document.getElementById("quote").value="The night is dark and full of terrors";
+		document.getElementById("quote").innerHTML=document.getElementById("quote").value;
+	};
+
+</script>
+<!--<script type="text/javascript">
+	document.write("<img src='" + imagen + "'/>")
+</script>-->
+</body>
+</html>

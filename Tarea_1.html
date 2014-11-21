@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Evaluación Inicial</title>
+<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+
+<style type="text/css" media="screen">
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background: #3498db;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.text{
+	padding-top: 50px;
+	color: #fff;
+	text-align:center;
+}
+
+.menu{
+	font-size: 40px;
+	width: 40px;
+	color: #fff;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	margin-left: -22px;
+	margin-bottom: 19px;
+	text-align: center;
+}
+
+.menuclose{
+	z-index: 1;
+	font-size: 50px;
+	width: 40px;
+	color: #fff;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	margin-left: -22px;
+	margin-bottom: 14px;
+	text-align: center;
+}
+
+#fancy{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: solid #000000;
+	/*border-width: 20px 30px 90px;*/
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0);
+	position:fixed;
+	top: 0;
+	left: 0;
+	visibility:hidden;
+}
+
+.animate_fancy{
+	
+}
+
+.barnav{
+	position: fixed;
+	bottom: 27px;
+	left: 50%;
+	margin-left: -420px;
+}
+
+.navleft,
+.navright{
+	list-style: none;
+    margin:0;
+    padding:0;
+    text-align:center;
+	font-size: 20px;
+	color: #fff;
+	float:left;
+}
+.navleft li{
+    display:inline;
+	padding-right: 150px;
+}
+.navright li{
+    display:inline;
+	padding-left: 150px;
+}
+.nav a{
+    display:inline-block;
+    padding:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="text">
+<h1>Evaluación Inicial</h1>
+<h2>Tec Web 1</h2>
+</div>
+
+<div class="menu ion ion-android-drawer">
+</div>
+
+<div id="fancy">
+<div class="menuclose ion ion-android-drawer">
+</div>
+<div class="barnav">
+	<ul class="navleft">
+		<li>Lorem</li>
+		<li>Ipsum</li>
+	</ul>
+	<ul class="navright">
+		<li>Dolor</li>
+		<li>Sit amet</li>
+	</ul>
+</div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js" type="text/javascript" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+
+$('.menu').click(function(){
+	$('#fancy').css('visibility','visible');
+	$('.menu').hide();
+	$('#fancy').css({border: '0 solid #000000'}).animate({
+		borderWidth: "30px 20px 90px 20px",
+		backgroundColor: 'rgba(0,0,0,0.5)'
+	}, 300);
+	
+});
+
+$('.menuclose').click(function(){
+	$('.menu').show();
+	$('#fancy').animate({
+		borderWidth: "0px",
+		backgroundColor: 'rgba(0,0,0,0)'
+	}, 300);
+	$('#fancy').css('visibility','hidden');
+	
+});
+</script>
+</body>
+</html>
